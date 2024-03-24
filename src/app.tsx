@@ -2,10 +2,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { t } from 'i18next';
 import { useState } from 'react';
-import './app.css';
+import { Route, Routes } from 'react-router-dom';
 import Page from './app/page/page';
+import { ROUTES } from './routes';
 import AppBar from './ui/app-bar/app-bar';
 
 function App() {
@@ -35,6 +35,15 @@ function App() {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <Routes>
+                        {ROUTES.map((route) => (
+                            <Route
+                                key={route.path}
+                                path={route.path}
+                                element={route.Title}
+                            />
+                        ))}
+                    </Routes>
                     <Typography
                         component="h1"
                         variant="h6"
@@ -42,7 +51,15 @@ function App() {
                         noWrap
                         sx={{ flexGrow: 1 }}
                     >
-                        {t('side-menu.calculator')}
+                        <Routes>
+                            {ROUTES.map((route) => (
+                                <Route
+                                    key={route.path}
+                                    path={route.path}
+                                    element={route.Page}
+                                />
+                            ))}
+                        </Routes>
                     </Typography>
                 </Toolbar>
             </AppBar>
