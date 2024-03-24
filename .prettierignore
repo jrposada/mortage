@@ -1,0 +1,9 @@
+.editorconfig
+.gitignore
+.husky/node-checks.sh
+.husky/pre-commit
+.npmignore
+.prettierignore
+*.md
+*.svg
+/.vscode
