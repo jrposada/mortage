@@ -1,3 +1,7 @@
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { t } from 'i18next';
 import Page from './app/page/page';
@@ -16,6 +20,14 @@ export const ROUTES = [
                 {t('side-menu.calculator')}
             </Typography>
         ),
-        Page: <Page></Page>,
+        Page: <Page>main</Page>,
+        navItem: (
+            <ListItemButton>
+                <ListItemIcon>
+                    <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary={t('side-menu.calculator')} />
+            </ListItemButton>
+        ),
     },
 ];
